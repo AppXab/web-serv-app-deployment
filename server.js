@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 //   })
 // });
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.render('home.hbs', { //handalbar file
     pageTitle: "Home", //dynamic values , put this value in double curly bracket {{}} at .hbs files
     heading: "welcome to home",
