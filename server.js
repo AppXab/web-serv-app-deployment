@@ -24,7 +24,8 @@ app.use((req, res, next) => {
 
 
 app.use((req, res, next) => {
-  res.render('maintanance.hbs');
+  // res.render('maintanance.hbs');
+  next();
 })
 
 app.get('/', (req, res) => {
@@ -38,10 +39,12 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('home.hbs', { //handalbar file
     pageTitle: "Home", //dynamic values , put this value in double curly bracket {{}} at .hbs files
-    heading: "welcome to home"
-
+    heading: "welcome to home",
+    currentYear: new Date().getFullYear()
   })
 })
+
+
 app.get('/about', (req, res) => {
   // res.send("abt page");
   res.render('about.hbs', {
@@ -49,6 +52,13 @@ app.get('/about', (req, res) => {
     currentYear: new Date().getFullYear()
   });
 })
-app.listen(port, () => {
+app.get('/portfolio', (req, res) => {
+  // res.send("abt page");
+  res.render('portfolio.hbs', {
+    pageTitle: 'here are our portfolios',
+    currentYear: new Date().getFullYear()
+  });
+})
+app.listen(3000, () => {
   console.log(`server is up on port ${port}`);
 });
