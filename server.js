@@ -28,13 +28,13 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get('/', (req, res) => {
-  // res.send('hello express');//normal text
-  res.send({ //json format
-    yo: "man",
-    go: "man"
-  })
-});
+// app.get('/', (req, res) => {
+//   // res.send('hello express');//normal text
+//   res.send({ //json format
+//     yo: "man",
+//     go: "man"
+//   })
+// });
 
 app.get('/home', (req, res) => {
   res.render('home.hbs', { //handalbar file
